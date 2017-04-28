@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-28 14:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: codenerix_extensions/corporate/forms.py:14
+#: codenerix_extensions/corporate/forms.py:25
+#: codenerix_extensions/geodata/forms.py:18
+#: codenerix_extensions/geodata/forms.py:33
+#: codenerix_extensions/geodata/forms.py:48
+#: codenerix_extensions/geodata/forms.py:63
+#: codenerix_extensions/geodata/forms.py:78
+#: codenerix_extensions/geodata/forms.py:92
+msgid "Details"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:13
+#: codenerix_extensions/corporate/models.py:20
+msgid "Digital sign"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:14
+#: codenerix_extensions/corporate/models.py:21
+msgid "Company seal"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:15
+#: codenerix_extensions/corporate/models.py:22
+msgid "Company logo"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:16
+#: codenerix_extensions/corporate/models.py:23
+msgid "Public"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:24
+msgid "Last Update"
+msgstr ""
+
+#: codenerix_extensions/corporate/views.py:14
+msgid "CorporateImage"
+msgstr ""
+
+#: codenerix_extensions/corporate/views.py:14
+msgid "People"
+msgstr ""
+
+#: codenerix_extensions/corporate/views.py:16
+msgid "Image not selected"
+msgstr ""
+
+#: codenerix_extensions/files/models.py:13
+#: codenerix_extensions/files/models.py:21
+msgid "Doc Path"
+msgstr ""
+
+#: codenerix_extensions/files/models.py:14
+#: codenerix_extensions/files/models.py:22
+#: codenerix_extensions/geodata/models.py:14
+#: codenerix_extensions/geodata/models.py:18
+#: codenerix_extensions/geodata/models.py:52
+#: codenerix_extensions/geodata/models.py:59
+#: codenerix_extensions/geodata/views.py:55
+#: codenerix_extensions/geodata/views.py:111
+#: codenerix_extensions/geodata/views.py:183
+#: codenerix_extensions/geodata/views.py:261
+#: codenerix_extensions/geodata/views.py:382
+msgid "Name"
+msgstr ""
+
+#: codenerix_extensions/files/models.py:29
+#: codenerix_extensions/files/models.py:36
+msgid "Image"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:26
+#: codenerix_extensions/geodata/models.py:33
+#: codenerix_extensions/geodata/models.py:38
+#: codenerix_extensions/geodata/models.py:46
+#: codenerix_extensions/geodata/models.py:65
+#: codenerix_extensions/geodata/models.py:73
+#: codenerix_extensions/geodata/models.py:79
+#: codenerix_extensions/geodata/models.py:87
+msgid "Code"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:39
+#: codenerix_extensions/geodata/models.py:47
+msgid "Continent"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:64
+#: codenerix_extensions/geodata/models.py:72
+#: codenerix_extensions/geodata/models.py:92
+#: codenerix_extensions/geodata/models.py:102
+msgid "Country"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:78
+#: codenerix_extensions/geodata/models.py:86
+#: codenerix_extensions/geodata/models.py:93
+msgid "Region"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:94
+msgid "Province"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:95
+msgid "City"
+msgstr ""
+
+#: codenerix_extensions/geodata/models.py:103
+msgid "Time zone"
+msgstr ""
+
+#: codenerix_extensions/management/commands/populate_geodata.py:129
+msgid "Populates Continent, Country and City models"
+msgstr ""

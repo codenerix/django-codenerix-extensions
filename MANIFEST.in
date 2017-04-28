@@ -1,0 +1,11 @@
+include MANIFEST.in
+include LICENSE
+include README.rst
+exclude *.pyc
+recursive-include codenerix_extensions/corporate *
+recursive-include codenerix_extensions/files *
+recursive-include codenerix_extensions/geodata *
+recursive-include codenerix_extensions/locale *
+recursive-include codenerix_extensions/management *
+recursive-include codenerix_extensions/migrations *
+recursive-include codenerix_extensions/static *
