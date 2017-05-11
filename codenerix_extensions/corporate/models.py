@@ -39,6 +39,12 @@ class CorporateImage(CodenerixModel):
     name_file_logo = models.CharField(_("Name file company logo"), max_length=254, blank=True, null=True)
     public = models.BooleanField(_("Public"), default=False)
 
+    def __unicode__(self):
+        return u"{}".format(self.digital_sign)
+
+    def __str__(self):
+        return self.__unicode__
+
     def __fields__(self, info):
         fields = []
         fields.append(('nid', _('NID'), 100))
@@ -52,9 +58,6 @@ class CorporateImage(CodenerixModel):
         fields.append(('public', _('Public'), 100))
         fields.append(('updated', _('Last Update'), 100))
         return fields
-
-    def __unicode__(self):
-        return u"{}".format(self.digital_sign)
 
     def save(self, *args, **kwards):
         """
