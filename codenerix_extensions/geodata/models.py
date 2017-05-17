@@ -20,7 +20,8 @@
 
 from django.conf import settings
 from django.db import models
-from django.utils.encoding import smart_unicode
+from django.db.models import Q
+from django.utils.encoding import smart_text
 from django.utils.translation import ugettext_lazy as _
 
 from codenerix.models import CodenerixModel
@@ -34,7 +35,7 @@ class GenGeoName(CodenerixModel):  # META: Abstract class
     name = models.CharField(_('Name'), max_length=100, blank=False)
 
     def __unicode__(self):
-        return u'{}'.format(smart_unicode(self.name))
+        return u'{}'.format(smart_text(self.name))
 
     def __str__(self):
         return self.__unicode__()
@@ -49,7 +50,7 @@ class Continent(CodenerixModel):
     code = models.CharField(_('Code'), max_length=2, unique=True, blank=False)
 
     def __unicode__(self):
-        return u"{}".format(smart_unicode(self.code))
+        return u"{}".format(smart_text(self.code))
 
     def __str__(self):
         return self.__unicode__()
@@ -59,13 +60,23 @@ class Continent(CodenerixModel):
             ('code', _('Code'), 100),
         ]
 
+    def __searchQ__(self, info, text):
+        return {
+            'code': models.Q(code__icontains=text),
+        }
+
+    def __searchF__(self, info):
+        filters = {}
+        filters['code'] = (_('Code'), lambda x: Q(code__icontains=x), 'input')
+        return filters
+
 
 class Country(CodenerixModel):
     code = models.CharField(_('Code'), max_length=2, unique=True, blank=False)
     continent = models.ForeignKey(Continent, verbose_name=_('Continent'), related_name='countries', null=False)
 
     def __unicode__(self):
-        return u"{}".format(smart_unicode(self.code))
+        return u"{}".format(smart_text(self.code))
 
     def __str__(self):
         return self.__unicode__()
@@ -76,12 +87,22 @@ class Country(CodenerixModel):
             ('continent', _('Continent'), 100),
         ]
 
+    def __searchQ__(self, info, text):
+        return {
+            'code': models.Q(code__icontains=text),
+        }
+
+    def __searchF__(self, info):
+        filters = {}
+        filters['code'] = (_('Code'), lambda x: Q(code__icontains=x), 'input')
+        return filters
+
 
 class TimeZone(CodenerixModel):
     name = models.CharField(_('Name'), max_length=50, unique=True, blank=False)
 
     def __unicode__(self):
-        return u"{}".format(smart_unicode(self.name))
+        return u"{}".format(smart_text(self.name))
 
     def __str__(self):
         return self.__unicode__()
@@ -91,13 +112,23 @@ class TimeZone(CodenerixModel):
             ('name', _('Name'), 100),
         ]
 
+    def __searchQ__(self, info, text):
+        return {
+            'name': models.Q(name__icontains=text),
+        }
+
+    def __searchF__(self, info):
+        filters = {}
+        filters['name'] = (_('Name'), lambda x: Q(name__icontains=x), 'input')
+        return filters
+
 
 class Region(CodenerixModel):
     country = models.ForeignKey(Country, verbose_name=_('Country'), null=False, related_name='regions')
     code = models.CharField(_('Code'), max_length=3, blank=False)
 
     def __unicode__(self):
-        return u"{} - {}".format(smart_unicode(self.country), self.code)
+        return u"{} - {}".format(smart_text(self.country), self.code)
 
     def __str__(self):
         return self.__unicode__()
@@ -108,13 +139,23 @@ class Region(CodenerixModel):
             ('code', _('Code'), 100),
         ]
 
+    def __searchQ__(self, info, text):
+        return {
+            'code': models.Q(code__icontains=text),
+        }
+
+    def __searchF__(self, info):
+        filters = {}
+        filters['code'] = (_('Code'), lambda x: Q(code__icontains=x), 'input')
+        return filters
+
 
 class Province(CodenerixModel):
     region = models.ForeignKey(Region, verbose_name=_('Region'), null=False, related_name='provinces')
     code = models.CharField(_('Code'), max_length=3, blank=False)
 
     def __unicode__(self):
-        return u"{} - {}".format(smart_unicode(self.region), self.code)
+        return u"{} - {}".format(smart_text(self.region), self.code)
 
     def __str__(self):
         return self.__unicode__()
@@ -125,6 +166,16 @@ class Province(CodenerixModel):
             ('code', _('Code'), 100),
         ]
 
+    def __searchQ__(self, info, text):
+        return {
+            'code': models.Q(code__icontains=text),
+        }
+
+    def __searchF__(self, info):
+        filters = {}
+        filters['code'] = (_('Code'), lambda x: Q(code__icontains=x), 'input')
+        return filters
+
 
 class City(CodenerixModel):
     country = models.ForeignKey(Country, verbose_name=_('Country'), null=False, related_name='cities')
@@ -133,7 +184,7 @@ class City(CodenerixModel):
     time_zone = models.ForeignKey(TimeZone, verbose_name=_('City'), null=False, related_name='cities')
 
     def __unicode__(self):
-        return u"{} - {}".format(smart_unicode(self.country), smart_unicode(self.time_zone))
+        return u"{} - {}".format(smart_text(self.country), smart_text(self.time_zone))
 
     def __str__(self):
         return self.__unicode__()
