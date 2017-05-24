@@ -28,7 +28,10 @@ class DocumentFileView(View):
             name_file = json.loads(self.request.body)['doc_path']['filename']
             self.request.name_file = name_file
             form.instance.name_file = name_file
-        return super(DocumentFileView, self).form_valid(form, forms)
+        if forms:
+            return super(DocumentFileView, self).form_valid(form, forms)
+        else:
+            return super(DocumentFileView, self).form_valid(form)
 
 
 class ImageFileView(View):
@@ -44,4 +47,7 @@ class ImageFileView(View):
                 name_file = json.loads(self.request.body)[field_image]['filename']
                 self.request.name_file = name_file
                 form.instance.name_file = name_file
-        return super(ImageFileView, self).form_valid(form, forms)
+        if forms:
+            return super(ImageFileView, self).form_valid(form, forms)
+        else:
+            return super(ImageFileView, self).form_valid(form)
