@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-28 14:33+0000\n"
+"POT-Creation-Date: 2017-06-15 17:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,118 +17,225 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: codenerix_extensions/corporate/forms.py:14
-#: codenerix_extensions/corporate/forms.py:25
-#: codenerix_extensions/geodata/forms.py:18
-#: codenerix_extensions/geodata/forms.py:33
-#: codenerix_extensions/geodata/forms.py:48
-#: codenerix_extensions/geodata/forms.py:63
-#: codenerix_extensions/geodata/forms.py:78
-#: codenerix_extensions/geodata/forms.py:92
+#: codenerix_extensions/corporate/forms.py:34
+#: codenerix_extensions/corporate/forms.py:48
+#: codenerix_extensions/geodata/forms.py:37
+#: codenerix_extensions/geodata/forms.py:52
+#: codenerix_extensions/geodata/forms.py:67
+#: codenerix_extensions/geodata/forms.py:82
+#: codenerix_extensions/geodata/forms.py:97
+#: codenerix_extensions/geodata/forms.py:111
 msgid "Details"
 msgstr ""
 
-#: codenerix_extensions/corporate/models.py:13
-#: codenerix_extensions/corporate/models.py:20
+#: codenerix_extensions/corporate/models.py:32
+#: codenerix_extensions/corporate/models.py:50
+msgid "NID"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:33
+#: codenerix_extensions/corporate/models.py:51
+msgid "Business name"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:34
+#: codenerix_extensions/corporate/models.py:52
 msgid "Digital sign"
 msgstr ""
 
-#: codenerix_extensions/corporate/models.py:14
-#: codenerix_extensions/corporate/models.py:21
+#: codenerix_extensions/corporate/models.py:35
+#: codenerix_extensions/corporate/models.py:53
+msgid "Name file digital sign"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:36
+#: codenerix_extensions/corporate/models.py:54
 msgid "Company seal"
 msgstr ""
 
-#: codenerix_extensions/corporate/models.py:15
-#: codenerix_extensions/corporate/models.py:22
+#: codenerix_extensions/corporate/models.py:37
+#: codenerix_extensions/corporate/models.py:55
+msgid "Name file company seal"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:38
+#: codenerix_extensions/corporate/models.py:56
 msgid "Company logo"
 msgstr ""
 
-#: codenerix_extensions/corporate/models.py:16
-#: codenerix_extensions/corporate/models.py:23
+#: codenerix_extensions/corporate/models.py:39
+#: codenerix_extensions/corporate/models.py:57
+msgid "Name file company logo"
+msgstr ""
+
+#: codenerix_extensions/corporate/models.py:40
+#: codenerix_extensions/corporate/models.py:58
 msgid "Public"
 msgstr ""
 
-#: codenerix_extensions/corporate/models.py:24
+#: codenerix_extensions/corporate/models.py:59
 msgid "Last Update"
 msgstr ""
 
-#: codenerix_extensions/corporate/views.py:14
+#: codenerix_extensions/corporate/views.py:34
 msgid "CorporateImage"
 msgstr ""
 
-#: codenerix_extensions/corporate/views.py:14
+#: codenerix_extensions/corporate/views.py:34
 msgid "People"
 msgstr ""
 
-#: codenerix_extensions/corporate/views.py:16
+#: codenerix_extensions/corporate/views.py:36
 msgid "Image not selected"
 msgstr ""
 
-#: codenerix_extensions/files/models.py:13
-#: codenerix_extensions/files/models.py:21
+#: codenerix_extensions/files/models.py:32
+#: codenerix_extensions/files/models.py:40
 msgid "Doc Path"
 msgstr ""
 
-#: codenerix_extensions/files/models.py:14
-#: codenerix_extensions/files/models.py:22
-#: codenerix_extensions/geodata/models.py:14
-#: codenerix_extensions/geodata/models.py:18
-#: codenerix_extensions/geodata/models.py:52
-#: codenerix_extensions/geodata/models.py:59
-#: codenerix_extensions/geodata/views.py:55
-#: codenerix_extensions/geodata/views.py:111
-#: codenerix_extensions/geodata/views.py:183
-#: codenerix_extensions/geodata/views.py:261
-#: codenerix_extensions/geodata/views.py:382
+#: codenerix_extensions/files/models.py:33
+#: codenerix_extensions/files/models.py:41
+#: codenerix_extensions/files/models.py:49
+#: codenerix_extensions/files/models.py:57
+#: codenerix_extensions/geodata/models.py:35
+#: codenerix_extensions/geodata/models.py:45
+#: codenerix_extensions/geodata/models.py:102
+#: codenerix_extensions/geodata/models.py:112
+#: codenerix_extensions/geodata/models.py:122
+#: codenerix_extensions/geodata/views.py:78
+#: codenerix_extensions/geodata/views.py:95
+#: codenerix_extensions/geodata/views.py:152
+#: codenerix_extensions/geodata/views.py:178
+#: codenerix_extensions/geodata/views.py:253
+#: codenerix_extensions/geodata/views.py:289
+#: codenerix_extensions/geodata/views.py:374
+#: codenerix_extensions/geodata/views.py:420
+#: codenerix_extensions/geodata/views.py:553
+#: codenerix_extensions/geodata/views.py:600
 msgid "Name"
 msgstr ""
 
-#: codenerix_extensions/files/models.py:29
-#: codenerix_extensions/files/models.py:36
+#: codenerix_extensions/files/models.py:48
+#: codenerix_extensions/files/models.py:56
 msgid "Image"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:26
-#: codenerix_extensions/geodata/models.py:33
-#: codenerix_extensions/geodata/models.py:38
-#: codenerix_extensions/geodata/models.py:46
-#: codenerix_extensions/geodata/models.py:65
-#: codenerix_extensions/geodata/models.py:73
-#: codenerix_extensions/geodata/models.py:79
-#: codenerix_extensions/geodata/models.py:87
+#: codenerix_extensions/geodata/models.py:50
+#: codenerix_extensions/geodata/models.py:60
+#: codenerix_extensions/geodata/models.py:70
+#: codenerix_extensions/geodata/models.py:75
+#: codenerix_extensions/geodata/models.py:86
+#: codenerix_extensions/geodata/models.py:97
+#: codenerix_extensions/geodata/models.py:128
+#: codenerix_extensions/geodata/models.py:139
+#: codenerix_extensions/geodata/models.py:149
+#: codenerix_extensions/geodata/models.py:155
+#: codenerix_extensions/geodata/models.py:166
+#: codenerix_extensions/geodata/models.py:176
+#: codenerix_extensions/geodata/views.py:151
+#: codenerix_extensions/geodata/views.py:252
+#: codenerix_extensions/geodata/views.py:373
 msgid "Code"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:39
-#: codenerix_extensions/geodata/models.py:47
+#: codenerix_extensions/geodata/models.py:76
+#: codenerix_extensions/geodata/models.py:87
 msgid "Continent"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:64
-#: codenerix_extensions/geodata/models.py:72
-#: codenerix_extensions/geodata/models.py:92
-#: codenerix_extensions/geodata/models.py:102
+#: codenerix_extensions/geodata/models.py:127
+#: codenerix_extensions/geodata/models.py:138
+#: codenerix_extensions/geodata/models.py:181
+#: codenerix_extensions/geodata/models.py:194
+#: codenerix_extensions/geodata/views.py:558
 msgid "Country"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:78
-#: codenerix_extensions/geodata/models.py:86
-#: codenerix_extensions/geodata/models.py:93
+#: codenerix_extensions/geodata/models.py:154
+#: codenerix_extensions/geodata/models.py:165
+#: codenerix_extensions/geodata/models.py:182
 msgid "Region"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:94
+#: codenerix_extensions/geodata/models.py:183
+#: codenerix_extensions/geodata/views.py:556
 msgid "Province"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:95
+#: codenerix_extensions/geodata/models.py:184
 msgid "City"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:103
+#: codenerix_extensions/geodata/models.py:195
 msgid "Time zone"
 msgstr ""
 
-#: codenerix_extensions/management/commands/populate_geodata.py:129
+#: codenerix_extensions/geodata/views.py:153
+#: codenerix_extensions/geodata/views.py:179
+#: codenerix_extensions/geodata/views.py:256
+#: codenerix_extensions/geodata/views.py:294
+#: codenerix_extensions/geodata/views.py:379
+#: codenerix_extensions/geodata/views.py:428
+#: codenerix_extensions/geodata/views.py:559
+#: codenerix_extensions/geodata/views.py:608
+msgid "Code continent"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:154
+#: codenerix_extensions/geodata/views.py:257
+#: codenerix_extensions/geodata/views.py:295
+#: codenerix_extensions/geodata/views.py:380
+#: codenerix_extensions/geodata/views.py:429
+#: codenerix_extensions/geodata/views.py:560
+#: codenerix_extensions/geodata/views.py:609
+msgid "Name continent"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:180
+msgid "Continent name"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:254
+#: codenerix_extensions/geodata/views.py:377
+#: codenerix_extensions/geodata/views.py:557
+msgid "Code country"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:255
+#: codenerix_extensions/geodata/views.py:292
+#: codenerix_extensions/geodata/views.py:378
+#: codenerix_extensions/geodata/views.py:426
+#: codenerix_extensions/geodata/views.py:606
+msgid "Name country"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:291
+#: codenerix_extensions/geodata/views.py:422
+#: codenerix_extensions/geodata/views.py:425
+#: codenerix_extensions/geodata/views.py:602
+#: codenerix_extensions/geodata/views.py:605
+msgid "Code self"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:375
+msgid "Code region"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:376
+#: codenerix_extensions/geodata/views.py:423
+#: codenerix_extensions/geodata/views.py:603
+msgid "Name region"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:554
+msgid "Time Zone"
+msgstr ""
+
+#: codenerix_extensions/geodata/views.py:555
+msgid "Code province"
+msgstr ""
+
+#: codenerix_extensions/management/commands/populate_geodata.py:149
 msgid "Populates Continent, Country and City models"
 msgstr ""
