@@ -24,8 +24,9 @@ from django.views.generic import View
 
 class DocumentFileView(View):
     def form_valid(self, form, forms=None):
-        if 'doc_path' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['doc_path']:
-            name_file = json.loads(self.request.body)['doc_path']['filename']
+        body_json = json.loads(self.request.body.decode('utf-8'))
+        if 'doc_path' in body_json and 'filename' in body_json['doc_path']:
+            name_file = body_json['doc_path']['filename']
             self.request.name_file = name_file
             form.instance.name_file = name_file
         if forms:
@@ -36,15 +37,16 @@ class DocumentFileView(View):
 
 class ImageFileView(View):
     def form_valid(self, form, forms=None):
-        if 'image' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['image']:
-            name_file = json.loads(self.request.body)['image']['filename']
+        body_json = json.loads(self.request.body.decode('utf-8'))
+        if 'image' in body_json and 'filename' in body_json['image']:
+            name_file = body_json['image']['filename']
             self.request.name_file = name_file
             form.instance.name_file = name_file
         else:
             # compatibility with multiforms
             field_image = "{}_image".format(str(self.form_class).split('.')[-1].replace("'", '').replace('>', ''))
-            if field_image in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)[field_image]:
-                name_file = json.loads(self.request.body)[field_image]['filename']
+            if field_image in body_json and 'filename' in body_json[field_image]:
+                name_file = body_json[field_image]['filename']
                 self.request.name_file = name_file
                 form.instance.name_file = name_file
         if forms:
