@@ -40,10 +40,10 @@ class CorporateImage(CodenerixModel):
     public = models.BooleanField(_("Public"), default=False)
 
     def __unicode__(self):
-        return u"{}".format(self.digital_sign)
+        return self.__str__()
 
     def __str__(self):
-        return self.__unicode__
+        return u"{}".format(self.business_name)
 
     def __fields__(self, info):
         fields = []
