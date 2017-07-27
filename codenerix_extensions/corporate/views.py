@@ -42,20 +42,34 @@ class CorporateImageCreate(GenCreate):
     form_class = CorporateImageForm
 
     def form_valid(self, form):
-        if 'digital_sign' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['digital_sign']:
-            name_file_sign = json.loads(self.request.body)['digital_sign']['filename']
-            self.request.name_file_sign = name_file_sign
-            form.instance.name_file_sign = name_file_sign
+        # Get body
+        body = json.loads(self.request.body.decode('utf-8'))
 
-        if 'company_seal' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['company_seal']:
-            name_file_seal = json.loads(self.request.body)['company_seal']['filename']
-            self.request.name_file_seal = name_file_seal
-            form.instance.name_file_seal = name_file_seal
+        # Get digital_sign
+        digital_sign = body.get('digital_sign', None)
+        if isinstance(digital_sign, dict):
+            name_file_sign = digital_sign.get('filename', None)
+            if name_file_sign is not None:
+                self.request.name_file_sign = name_file_sign
+                form.instance.name_file_sign = name_file_sign
 
-        if 'company_logo' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['company_logo']:
-            name_file_logo = json.loads(self.request.body)['company_logo']['filename']
-            self.request.name_file_logo = name_file_logo
-            form.instance.name_file_logo = name_file_logo
+        # Get company seal
+        company_seal = body.get('company_seal', None)
+        if isinstance(company_seal, dict):
+            name_file_seal = company_seal.get('filename', None)
+            if name_file_seal is not None:
+                self.request.name_file_seal = name_file_seal
+                form.instance.name_file_seal = name_file_seal
+
+        # Get company logo
+        company_logo = body.get('company_logo', None)
+        if isinstance(company_logo, dict):
+            name_file_logo = company_logo.get('filename', None)
+            if name_file_logo is not None:
+                self.request.name_file_logo = name_file_logo
+                form.instance.name_file_logo = name_file_logo
+
+        # Return result
         return super(CorporateImageCreate, self).form_valid(form)
 
 
@@ -68,20 +82,34 @@ class CorporateImageUpdate(GenUpdate):
     form_class = CorporateImageForm
 
     def form_valid(self, form):
-        if 'digital_sign' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['digital_sign']:
-            name_file_sign = json.loads(self.request.body)['digital_sign']['filename']
-            self.request.name_file_sign = name_file_sign
-            form.instance.name_file_sign = name_file_sign
+        # Get body
+        body = json.loads(self.request.body.decode('utf-8'))
 
-        if 'company_logo' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['company_logo']:
-            name_file_logo = json.loads(self.request.body)['company_logo']['filename']
-            self.request.name_file_logo = name_file_logo
-            form.instance.name_file_logo = name_file_logo
+        # Get digital_sign
+        digital_sign = body.get('digital_sign', None)
+        if isinstance(digital_sign, dict):
+            name_file_sign = digital_sign.get('filename', None)
+            if name_file_sign is not None:
+                self.request.name_file_sign = name_file_sign
+                form.instance.name_file_sign = name_file_sign
 
-        if 'company_seal' in json.loads(self.request.body) and 'filename' in json.loads(self.request.body)['company_seal']:
-            name_file_seal = json.loads(self.request.body)['company_seal']['filename']
-            self.request.name_file_seal = name_file_seal
-            form.instance.name_file_seal = name_file_seal
+        # Get company seal
+        company_seal = body.get('company_seal', None)
+        if isinstance(company_seal, dict):
+            name_file_seal = company_seal.get('filename', None)
+            if name_file_seal is not None:
+                self.request.name_file_seal = name_file_seal
+                form.instance.name_file_seal = name_file_seal
+
+        # Get company logo
+        company_logo = body.get('company_logo', None)
+        if isinstance(company_logo, dict):
+            name_file_logo = company_logo.get('filename', None)
+            if name_file_logo is not None:
+                self.request.name_file_logo = name_file_logo
+                form.instance.name_file_logo = name_file_logo
+
+        # Return result
         return super(CorporateImageUpdate, self).form_valid(form)
 
 
