@@ -31,7 +31,7 @@ from codenerix_extensions.corporate.forms import CorporateImageForm
 class CorporateImageList(GenList):
     model = CorporateImage
     default_ordering = ['-public', ]
-    extra_context = {'menu': ['CorporateImage', 'people'], 'bread': [_('CorporateImage'), _('People')]}
+    extra_context = {'menu': ['CDNX_CorporateImage', 'CDNX_CorporateImage'], 'bread': [_('CorporateImage'), _('CorporateImage')]}
     gentranslate = {
         'image_not_selected': _("Image not selected")
     }
