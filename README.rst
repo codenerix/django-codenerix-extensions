@@ -69,3 +69,11 @@ Credits
 *******
 
 The geographical data are offered by `Maxmind <https://www.maxmind.com/>`_, which is made available under Creative Commons Attribution 3.0
+
+Several technologies have been used to build `CODENERIX EXTENSIONS <http://www.codenerix.com>`_:
+
+=================================== =================== =========================== =========================================================
+Project name                        License             Owner                       Link to project
+=================================== =================== =========================== =========================================================
+crypto-js                           MIT                 Jakub Zapletal              https://github.com/jakubzapletal/crypto-js         
+=================================== =================== =========================== =========================================================
