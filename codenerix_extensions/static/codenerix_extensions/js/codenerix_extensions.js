@@ -34,10 +34,12 @@
             var newfield = model_name+lang+'_'+field_name;
             var value = scope[scope.form_name][newfield].$viewValue;
             if (value == undefined || value==scope.refresh_lang_field_memory[basefield]) {
-                $timeout(function () {
-                    scope[scope.form_name][newfield].$setViewValue(scope[scope.form_name][basefield].$viewValue);
-                    scope[scope.form_name][newfield].$render();
-                },500);
+                if (scope[scope.form_name] != undefined && scope[scope.form_name][basefield] != undefined){
+                    $timeout(function () {
+                        scope[scope.form_name][newfield].$setViewValue(scope[scope.form_name][basefield].$viewValue);
+                        scope[scope.form_name][newfield].$render();
+                    }, 500);
+                }
             }
         });
         scope.refresh_lang_field_memory[basefield]=scope[scope.form_name][basefield].$viewValue;
