@@ -63,6 +63,10 @@ class GenCreateBridge(GenModify, GenBase, CreateView):
                         return result
             except CodenerixException:
                 return super(GenCreateBridge, self).form_invalid(form)
+            except IOError as e:
+                errors = form._errors.setdefault("codenerix_external_field", ErrorList())
+                errors.append(e)
+                return super(GenCreateBridge, self).form_invalid(form)
         else:
             errors = form._errors.setdefault(field, ErrorList())
             errors.append(error_message[1])
