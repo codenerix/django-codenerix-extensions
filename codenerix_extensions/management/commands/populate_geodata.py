@@ -26,7 +26,8 @@ Two different databases were used:
 """
 
 from os.path import dirname, join
-from bz2 import BZ2File
+import bz2
+# from bz2 import BZ2File
 from csv import reader
 
 from django.conf import settings
@@ -54,7 +55,10 @@ LANGUAGES = set([code for code in settings.LANGUAGES_DATABASES if code in COUNTR
 
 def clean(name):
     if name:
-        name = name.decode('utf-8')
+        try:
+            name = name.decode('utf-8')
+        except Exception:
+            pass
         if name[0] == '"' and name[-1] == '"':
             return name[1:-1]
     return name
@@ -71,7 +75,8 @@ def populate_missing_names(data):
 
 
 def continents_lines(filename):
-    with BZ2File(filename, 'rU') as data_file:
+    # with BZ2File(filename, 'rU') as data_file:
+    with bz2.open(filename, 'rt') as data_file:
         csv_file = reader(data_file, delimiter=',', quotechar='"')
 
         first = True
@@ -86,7 +91,8 @@ def continents_lines(filename):
 
 
 def country_lines(filename):
-    with BZ2File(filename, 'rU') as data_file:
+    # with BZ2File(filename, 'rU') as data_file:
+    with bz2.open(filename, 'rt') as data_file:
         csv_file = reader(data_file, delimiter=',', quotechar='"')
 
         first = True
@@ -101,7 +107,8 @@ def country_lines(filename):
 
 
 def region_lines(filename):
-    with BZ2File(filename, 'rU') as data_file:
+    # with BZ2File(filename, 'rU') as data_file:
+    with bz2.open(filename, 'rt') as data_file:
         csv_file = reader(data_file, delimiter=',', quotechar='"')
 
         first = True
@@ -116,7 +123,8 @@ def region_lines(filename):
 
 
 def province_lines(filename):
-    with BZ2File(filename, 'rU') as data_file:
+    # with BZ2File(filename, 'rU') as data_file:
+    with bz2.open(filename, 'rt') as data_file:
         csv_file = reader(data_file, delimiter=',', quotechar='"')
 
         first = True
@@ -131,7 +139,8 @@ def province_lines(filename):
 
 
 def city_lines(filename):
-    with BZ2File(filename, 'rU') as data_file:
+    # with BZ2File(filename, 'rU') as data_file:
+    with bz2.open(filename, 'rt') as data_file:
         csv_file = reader(data_file, delimiter=',', quotechar='"')
 
         first = True
@@ -266,7 +275,7 @@ class Command(BaseCommand):
                 except ObjectDoesNotExist:
                     model = model_type()
                     model.region = region['model']
-                model.name = region[lang]
+                    model.name = region[lang]
                 model.save()
         print('Ok')
 
