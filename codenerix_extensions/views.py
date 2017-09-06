@@ -59,7 +59,9 @@ class GenCreateBridge(GenModify, GenBase, CreateView):
                     else:
                         setattr(related_object, related_field, form.instance)
                         related_object.save()
-                        self.object.CDNX_refresh_permissions_CDNX()
+                        if hasattr(self.object, 'CDNX_refresh_permissions_CDNX'):
+                            self.object.CDNX_refresh_permissions_CDNX()
+                        
                         return result
             except CodenerixException:
                 return super(GenCreateBridge, self).form_invalid(form)
