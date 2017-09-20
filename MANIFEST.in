@@ -4,6 +4,7 @@ include README.rst
 exclude *.pyc
 recursive-include codenerix_extensions/corporate *
 recursive-include codenerix_extensions/files *
+recursive-include codenerix_extensions/lib *
 recursive-include codenerix_extensions/geodata *
 recursive-include codenerix_extensions/locale *
 recursive-include codenerix_extensions/management *
