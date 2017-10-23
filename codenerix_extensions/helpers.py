@@ -18,6 +18,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import bz2
+from bz2 import BZ2File
+
 from django.utils.translation import get_language
 from django.conf import settings
 
@@ -86,3 +89,35 @@ def get_language_database():
     if lang is None:
         lang = settings.LANGUAGES_DATABASES[0]
     return lang.lower()
+
+
+class FileBZ2(object):
+    def __init__(self, filename, mode):
+        self.file = None
+        if 'r' in mode:
+            self.mode = 'r'
+        elif 'w' in mode:
+            self.mode = 'w'
+            raise Exception('This method is not developed')
+        else:
+            raise Exception('Mode must contain "r" for decompressing or "w" for compressing')
+        
+        self.binary = 'b' in mode
+        self.filename = filename
+
+    def __enter__(self):
+        try:
+            mode = self.mode
+            if self.binary:
+                mode += 't'
+            self.file = bz2.open(self.filename, mode)
+        except AttributeError:
+            mode = self.mode
+            if self.binary:
+                mode += 'U'
+            self.file = BZ2File(self.filename, mode)
+        return self.file
+
+    def __exit__(self, type, value, traceback):
+        if self.file:
+            self.file.close()
