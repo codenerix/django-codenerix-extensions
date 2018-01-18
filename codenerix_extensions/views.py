@@ -21,6 +21,7 @@
 from django.views.generic.edit import CreateView, UpdateView
 from django.db import transaction
 from django.forms.utils import ErrorList
+from django.http import HttpResponseRedirect
 
 from codenerix.views import GenBase, GenModify
 from codenerix.exceptions import CodenerixException
@@ -52,7 +53,7 @@ class GenCreateBridge(GenModify, GenBase, CreateView):
                     if get_external_model(model).objects.filter(**{
                             "pk": external.pk,
                             "{}__isnull".format(related_field): False
-                    }).exists():
+                            }).exists():
                         errors = form._errors.setdefault(field, ErrorList())
                         errors.append(error_message[0])
                         raise CodenerixException()
@@ -61,18 +62,21 @@ class GenCreateBridge(GenModify, GenBase, CreateView):
                         related_object.save()
                         if hasattr(self.object, 'CDNX_refresh_permissions_CDNX'):
                             self.object.CDNX_refresh_permissions_CDNX()
-                        
-                        return result
+                # Return the object already saved properly
+                answer = HttpResponseRedirect(self.get_success_url())
             except CodenerixException:
-                return super(GenCreateBridge, self).form_invalid(form)
+                answer = super(GenCreateBridge, self).form_invalid(form)
             except IOError as e:
                 errors = form._errors.setdefault("codenerix_external_field", ErrorList())
                 errors.append(e)
-                return super(GenCreateBridge, self).form_invalid(form)
+                answer = super(GenCreateBridge, self).form_invalid(form)
         else:
             errors = form._errors.setdefault(field, ErrorList())
             errors.append(error_message[1])
-            return super(GenCreateBridge, self).form_invalid(form)
+            answer = super(GenCreateBridge, self).form_invalid(form)
+
+        # Return
+        return answer
 
 
 class GenUpdateBridge(GenModify, GenBase, UpdateView):
@@ -91,7 +95,7 @@ class GenUpdateBridge(GenModify, GenBase, UpdateView):
         external = form.cleaned_data[field]
         object_edit = model.objects.get(pk=form.instance.pk)
         if object_edit.external == external:
-            return super(GenUpdateBridge, self).form_valid(form)
+            answer = super(GenUpdateBridge, self).form_valid(form)
         else:
             related_object = get_external_model(model).objects.filter(**{
                 "pk": external.pk,
@@ -109,10 +113,14 @@ class GenUpdateBridge(GenModify, GenBase, UpdateView):
                         field.save()
                         setattr(external, related_field, form.instance)
                         external.save()
-                        return result
+                    # Return success url
+                    answer = HttpResponseRedirect(self.get_success_url())
                 except CodenerixException:
-                    return super(GenUpdateBridge, self).form_invalid(form)
+                    answer = super(GenUpdateBridge, self).form_invalid(form)
             else:
                 errors = form._errors.setdefault(field, ErrorList())
                 errors.append(error_message[0])
-                return super(GenUpdateBridge, self).form_invalid(form)
+                answer = super(GenUpdateBridge, self).form_invalid(form)
+
+        # Return result
+        return answer
