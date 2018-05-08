@@ -18,7 +18,7 @@ setup(
     license='Apache License Version 2.0',
     description='Codenerix Extensions is a module that enables CODENERIX to set extensions on serveral platforms in a general manner.',
     long_description=README,
-    url='https://github.com/centrologic/django-codenerix-extensions',
+    url='https://github.com/codenerix/django-codenerix-extensions',
     author=", ".join(codenerix_extensions.__authors__),
     keywords=['django', 'codenerix', 'management', 'erp', 'crm', 'extensions', 'files', 'geo data', 'corparate image'],
     platforms=['OS Independent'],
