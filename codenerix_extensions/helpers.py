@@ -20,6 +20,7 @@
 
 import bz2
 from bz2 import BZ2File
+from decimal import Decimal, ROUND_HALF_UP
 
 from django.utils.translation import get_language
 from django.conf import settings
@@ -121,3 +122,10 @@ class FileBZ2(object):
     def __exit__(self, type, value, traceback):
         if self.file:
             self.file.close()
+
+
+def round_decimal(number, currency_decimal_places=2, round_type=ROUND_HALF_UP):
+    # Round Decimal variable
+    number = Decimal(number)
+    number_decimal = str(10**(-currency_decimal_places))
+    return number.quantize(Decimal(number_decimal), rounding=round_type)
