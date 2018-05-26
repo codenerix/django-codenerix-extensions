@@ -2,7 +2,7 @@
 django-codenerix-extensions
 ===========================
 
-Codenerix Extensions is a module that enables `CODENERIX.com <http://www.codenerix.com/>`_ to set extensions on several platforms in a general manner.
+Codenerix Extensions is a module that enables `CODENERIX <http://www.codenerix.com/>`_ to set extensions on several platforms in a general manner.
 
 .. image:: http://www.codenerix.com/wp-content/uploads/2018/05/codenerix.png
     :target: http://www.codenerix.com
@@ -51,6 +51,8 @@ Documentation
 *************
 
 Coming soon... do you help us? `Codenerix <http://www.codenerix.com/>`_
+
+You can chat with us `here <https://goo.gl/NgpzBh>`_.
 
 *******
 Credits
