@@ -2,6 +2,8 @@ include MANIFEST.in
 include LICENSE
 include README.rst
 exclude *.pyc
+exclude __pycache__
+exclude .ropeproject
 recursive-include codenerix_extensions/files *
 recursive-include codenerix_extensions/lib *
 recursive-include codenerix_extensions/locale *
