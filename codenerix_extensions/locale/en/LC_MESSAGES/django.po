@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-12 16:13+0000\n"
+"POT-Creation-Date: 2020-01-10 07:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,78 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: codenerix_extensions/corporate/forms.py:34
-#: codenerix_extensions/corporate/forms.py:48
-#: codenerix_extensions/geodata/forms.py:37
-#: codenerix_extensions/geodata/forms.py:52
-#: codenerix_extensions/geodata/forms.py:67
-#: codenerix_extensions/geodata/forms.py:82
-#: codenerix_extensions/geodata/forms.py:97
-#: codenerix_extensions/geodata/forms.py:111
-msgid "Details"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:32
-#: codenerix_extensions/corporate/models.py:50
-msgid "NID"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:33
-#: codenerix_extensions/corporate/models.py:51
-msgid "Business name"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:34
-#: codenerix_extensions/corporate/models.py:52
-msgid "Digital sign"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:35
-#: codenerix_extensions/corporate/models.py:53
-msgid "Name file digital sign"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:36
-#: codenerix_extensions/corporate/models.py:54
-msgid "Company seal"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:37
-#: codenerix_extensions/corporate/models.py:55
-msgid "Name file company seal"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:38
-#: codenerix_extensions/corporate/models.py:56
-msgid "Company logo"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:39
-#: codenerix_extensions/corporate/models.py:57
-msgid "Name file company logo"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:40
-#: codenerix_extensions/corporate/models.py:58
-msgid "Public"
-msgstr ""
-
-#: codenerix_extensions/corporate/models.py:59
-msgid "Last Update"
-msgstr ""
-
-#: codenerix_extensions/corporate/views.py:34
-msgid "CorporateImage"
-msgstr ""
-
-#: codenerix_extensions/corporate/views.py:34
-msgid "People"
-msgstr ""
-
-#: codenerix_extensions/corporate/views.py:36
-msgid "Image not selected"
-msgstr ""
 
 #: codenerix_extensions/files/models.py:32
 #: codenerix_extensions/files/models.py:40
@@ -98,21 +26,6 @@ msgstr ""
 #: codenerix_extensions/files/models.py:41
 #: codenerix_extensions/files/models.py:49
 #: codenerix_extensions/files/models.py:57
-#: codenerix_extensions/geodata/models.py:35
-#: codenerix_extensions/geodata/models.py:45
-#: codenerix_extensions/geodata/models.py:102
-#: codenerix_extensions/geodata/models.py:112
-#: codenerix_extensions/geodata/models.py:122
-#: codenerix_extensions/geodata/views.py:78
-#: codenerix_extensions/geodata/views.py:95
-#: codenerix_extensions/geodata/views.py:152
-#: codenerix_extensions/geodata/views.py:178
-#: codenerix_extensions/geodata/views.py:253
-#: codenerix_extensions/geodata/views.py:289
-#: codenerix_extensions/geodata/views.py:374
-#: codenerix_extensions/geodata/views.py:420
-#: codenerix_extensions/geodata/views.py:553
-#: codenerix_extensions/geodata/views.py:600
 msgid "Name"
 msgstr ""
 
@@ -121,121 +34,52 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:50
-#: codenerix_extensions/geodata/models.py:60
-#: codenerix_extensions/geodata/models.py:70
-#: codenerix_extensions/geodata/models.py:75
-#: codenerix_extensions/geodata/models.py:86
-#: codenerix_extensions/geodata/models.py:97
-#: codenerix_extensions/geodata/models.py:128
-#: codenerix_extensions/geodata/models.py:139
-#: codenerix_extensions/geodata/models.py:149
-#: codenerix_extensions/geodata/models.py:155
-#: codenerix_extensions/geodata/models.py:166
-#: codenerix_extensions/geodata/models.py:176
-#: codenerix_extensions/geodata/views.py:151
-#: codenerix_extensions/geodata/views.py:252
-#: codenerix_extensions/geodata/views.py:373
-msgid "Code"
+#: codenerix_extensions/validators.py:128
+#, python-format
+msgid "NIF %(cid)s is misspelled"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:76
-#: codenerix_extensions/geodata/models.py:87
-msgid "Continent"
+#: codenerix_extensions/validators.py:130
+#, python-format
+msgid "CIF %(cid)s is misspelled"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:127
-#: codenerix_extensions/geodata/models.py:138
-#: codenerix_extensions/geodata/models.py:181
-#: codenerix_extensions/geodata/models.py:194
-#: codenerix_extensions/geodata/views.py:558
-msgid "Country"
+#: codenerix_extensions/validators.py:132
+#, python-format
+msgid "NIE %(cid)s is misspelled"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:154
-#: codenerix_extensions/geodata/models.py:165
-#: codenerix_extensions/geodata/models.py:182
-msgid "Region"
+#: codenerix_extensions/validators.py:134
+#, python-format
+msgid "CID %(cid)s is too long"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:183
-#: codenerix_extensions/geodata/views.py:556
-msgid "Province"
+#: codenerix_extensions/validators.py:136
+#, python-format
+msgid "CID %(cid)s has a wrong format"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:184
-msgid "City"
+#: codenerix_extensions/validators.py:138
+#: codenerix_extensions/validators.py:148
+#: codenerix_extensions/validators.py:153
+#: codenerix_extensions/validators.py:158
+#, python-format
+msgid "CID %(cid)s is incorrect"
 msgstr ""
 
-#: codenerix_extensions/geodata/models.py:195
-msgid "Time zone"
+#: codenerix_extensions/validators.py:141
+#, python-format
+msgid "%(cid)s is incorrect"
 msgstr ""
 
-#: codenerix_extensions/geodata/views.py:153
-#: codenerix_extensions/geodata/views.py:179
-#: codenerix_extensions/geodata/views.py:256
-#: codenerix_extensions/geodata/views.py:294
-#: codenerix_extensions/geodata/views.py:379
-#: codenerix_extensions/geodata/views.py:428
-#: codenerix_extensions/geodata/views.py:559
-#: codenerix_extensions/geodata/views.py:608
-msgid "Code continent"
+#: codenerix_extensions/validators.py:146
+msgid "NIFs are not allowed in this field"
 msgstr ""
 
-#: codenerix_extensions/geodata/views.py:154
-#: codenerix_extensions/geodata/views.py:257
-#: codenerix_extensions/geodata/views.py:295
-#: codenerix_extensions/geodata/views.py:380
-#: codenerix_extensions/geodata/views.py:429
-#: codenerix_extensions/geodata/views.py:560
-#: codenerix_extensions/geodata/views.py:609
-msgid "Name continent"
+#: codenerix_extensions/validators.py:151
+msgid "CIFs are not allowed in this field"
 msgstr ""
 
-#: codenerix_extensions/geodata/views.py:180
-msgid "Continent name"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:254
-#: codenerix_extensions/geodata/views.py:377
-#: codenerix_extensions/geodata/views.py:557
-msgid "Code country"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:255
-#: codenerix_extensions/geodata/views.py:292
-#: codenerix_extensions/geodata/views.py:378
-#: codenerix_extensions/geodata/views.py:426
-#: codenerix_extensions/geodata/views.py:606
-msgid "Name country"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:291
-#: codenerix_extensions/geodata/views.py:422
-#: codenerix_extensions/geodata/views.py:425
-#: codenerix_extensions/geodata/views.py:602
-#: codenerix_extensions/geodata/views.py:605
-msgid "Code self"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:375
-msgid "Code region"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:376
-#: codenerix_extensions/geodata/views.py:423
-#: codenerix_extensions/geodata/views.py:603
-msgid "Name region"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:554
-msgid "Time Zone"
-msgstr ""
-
-#: codenerix_extensions/geodata/views.py:555
-msgid "Code province"
-msgstr ""
-
-#: codenerix_extensions/management/commands/populate_geodata.py:149
-msgid "Populates Continent, Country and City models"
+#: codenerix_extensions/validators.py:156
+msgid "NIEs are not allowed in this field"
 msgstr ""
