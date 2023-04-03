@@ -29,32 +29,64 @@ from codenerix.fields import FileAngularField, ImageAngularField
 # #### Documentos e imagenes #######
 # ##################################
 class GenDocumentFile(models.Model):  # META: Abstract class
-    doc_path = FileAngularField(_("Doc Path"), upload_to=upload_path, max_length=200, blank=False, null=False)
-    name_file = models.CharField(_("Name"), max_length=254, blank=False, null=False)
+    doc_path = FileAngularField(
+        _("Doc Path"),
+        upload_to=upload_path,
+        max_length=200,
+        blank=False,
+        null=False,
+    )
+    name_file = models.CharField(
+        _("Name"), max_length=254, blank=False, null=False
+    )
 
     class Meta:
         abstract = True
 
 
 class GenDocumentFileNull(models.Model):  # META: Abstract class
-    doc_path = FileAngularField(_("Doc Path"), upload_to=upload_path, max_length=200, blank=True, null=True)
-    name_file = models.CharField(_("Name"), max_length=254, blank=True, null=True)
+    doc_path = FileAngularField(
+        _("Doc Path"),
+        upload_to=upload_path,
+        max_length=200,
+        blank=True,
+        null=True,
+    )
+    name_file = models.CharField(
+        _("Name"), max_length=254, blank=True, null=True
+    )
 
     class Meta:
         abstract = True
 
 
 class GenImageFile(models.Model):  # META: Abstract class
-    image = ImageAngularField(_("Image"), upload_to=upload_path, max_length=200, blank=False, null=False)
-    name_file = models.CharField(_("Name"), max_length=254, blank=True, null=True)
+    image = ImageAngularField(
+        _("Image"),
+        upload_to=upload_path,
+        max_length=200,
+        blank=False,
+        null=False,
+    )
+    name_file = models.CharField(
+        _("Name"), max_length=254, blank=True, null=True
+    )
 
     class Meta:
         abstract = True
 
 
 class GenImageFileNull(models.Model):  # META: Abstract class
-    image = ImageAngularField(_("Image"), upload_to=upload_path, max_length=200, blank=True, null=True)
-    name_file = models.CharField(_("Name"), max_length=254, blank=True, null=True)
+    image = ImageAngularField(
+        _("Image"),
+        upload_to=upload_path,
+        max_length=200,
+        blank=True,
+        null=True,
+    )
+    name_file = models.CharField(
+        _("Name"), max_length=254, blank=True, null=True
+    )
 
     class Meta:
         abstract = True
