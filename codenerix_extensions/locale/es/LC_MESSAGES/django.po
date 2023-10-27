@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 15:46+0200\n"
+"POT-Creation-Date: 2023-07-20 10:56+0200\n"
 "PO-Revision-Date: 2017-11-22 17:11-0015\n"
 "Last-Translator: b'nombe apellidos <soleronline@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: codenerix_extensions/files/models.py:32
-#: codenerix_extensions/files/models.py:40
+#: codenerix_extensions/files/models.py:33
+#: codenerix_extensions/files/models.py:49
 msgid "Doc Path"
 msgstr "Ruta del documento"
 
-#: codenerix_extensions/files/models.py:33
-#: codenerix_extensions/files/models.py:41
-#: codenerix_extensions/files/models.py:49
-#: codenerix_extensions/files/models.py:57
+#: codenerix_extensions/files/models.py:40
+#: codenerix_extensions/files/models.py:56
+#: codenerix_extensions/files/models.py:72
+#: codenerix_extensions/files/models.py:88
 msgid "Name"
 msgstr "Nombre"
 
-#: codenerix_extensions/files/models.py:48
-#: codenerix_extensions/files/models.py:56
+#: codenerix_extensions/files/models.py:65
+#: codenerix_extensions/files/models.py:81
 msgid "Image"
 msgstr "Imagen"
 
