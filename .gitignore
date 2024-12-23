@@ -88,6 +88,7 @@ ENV/
 
 # vim temporal files
 *.swp
+.mypy_cache
 
 # CODENERIX files
 /django_codenerix*.egg-info
